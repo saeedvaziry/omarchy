@@ -91,7 +91,6 @@ sudo pacman -S --noconfirm --needed \
   qt5-wayland \
   ripgrep \
   satty \
-  signal-desktop \
   slurp \
   spotify \
   sushi \
@@ -126,4 +125,16 @@ sudo pacman -S --noconfirm --needed \
   xournalpp \
   yaru-icon-theme \
   yay \
-  zoxide
+  zoxide \
+  gnome-boxes \
+  ddcutil \
+  php \
+  php-gd \
+  php-igbinary \
+  php-redis \
+  php-sqlite \
+  tmux \
+  tmuxp \
+  v2ray \
+  valkey \
+  xdebug

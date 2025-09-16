@@ -128,13 +128,6 @@ sudo pacman -S --noconfirm --needed \
   zoxide \
   gnome-boxes \
   ddcutil \
-  php \
-  php-gd \
-  php-igbinary \
-  php-redis \
-  php-sqlite \
-  tmux \
   tmuxp \
   v2ray \
-  valkey \
-  xdebug
+  valkey

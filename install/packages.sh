@@ -94,7 +94,6 @@ sudo pacman -S --noconfirm --needed \
   signal-desktop \
   slurp \
   spotify \
-  starship \
   sushi \
   swaybg \
   swayosd \

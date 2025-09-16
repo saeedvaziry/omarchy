@@ -1,0 +1,11 @@
+include=~/.local/share/omarchy/default/mako/core.ini
+
+text-color=#C1C497
+border-color=#214237
+background-color=#11221C
+padding=10
+border-size=2
+font=CaskydiaMono Nerd Font 12
+max-icon-size=32
+outer-margin=5
+border-radius=8

@@ -4,29 +4,69 @@ return {
     opts = {
       servers = {
         tailwindcss = {
-          -- exclude a filetype from the default_config
+          -- custom include/exclude
           filetypes_exclude = { "markdown" },
-          -- add additional filetypes to the default_config
           filetypes_include = {},
-          -- to fully override the default_config, change the below
-          -- filetypes = {}
         },
       },
       setup = {
         tailwindcss = function(_, opts)
-          local tw = LazyVim.lsp.get_raw_config("tailwindcss")
-          opts.filetypes = opts.filetypes or {}
+          -- Default Tailwind LSP filetypes (taken from the latest lspconfig source)
+          local default_filetypes = {
+            "aspnetcorerazor",
+            "astro",
+            "astro-markdown",
+            "blade",
+            "clojure",
+            "django-html",
+            "edge",
+            "eelixir", -- Phoenix templates
+            "elixir",
+            "erb",
+            "eruby",
+            "gohtml",
+            "haml",
+            "handlebars",
+            "hbs",
+            "html",
+            "htmlangular",
+            "htmldjango",
+            "javascript",
+            "javascriptreact",
+            "liquid",
+            "markdown",
+            "mdx",
+            "mustache",
+            "njk",
+            "nunjucks",
+            "php",
+            "razor",
+            "reason",
+            "rescript",
+            "svelte",
+            "twig",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "heex", -- Phoenix HEEx templates
+            "css",
+            "sass",
+            "scss",
+            "less",
+          }
 
-          -- Add default filetypes
-          vim.list_extend(opts.filetypes, tw.default_config.filetypes)
+          -- Start with defaults
+          opts.filetypes = vim.deepcopy(default_filetypes)
 
           -- Remove excluded filetypes
-          --- @param ft string
           opts.filetypes = vim.tbl_filter(function(ft)
             return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
           end, opts.filetypes)
 
-          -- Additional settings for Phoenix projects
+          -- Add extra includes if defined
+          vim.list_extend(opts.filetypes, opts.filetypes_include or {})
+
+          -- Extra Phoenix framework support
           opts.settings = {
             tailwindCSS = {
               includeLanguages = {
@@ -36,13 +76,12 @@ return {
               },
             },
           }
-
-          -- Add additional filetypes
-          vim.list_extend(opts.filetypes, opts.filetypes_include or {})
         end,
       },
     },
   },
+
+  -- Tailwind-colored completion support
   {
     "hrsh7th/nvim-cmp",
     optional = true,

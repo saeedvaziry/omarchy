@@ -50,8 +50,7 @@ source $OMARCHY_INSTALL/config/hardware/ignore-power-button.sh
 source $OMARCHY_INSTALL/config/hardware/nvidia.sh
 source $OMARCHY_INSTALL/config/hardware/intel.sh
 source $OMARCHY_INSTALL/config/hardware/fix-f13-amd-audio-input.sh
-
-# Customize
+source $OMARCHY_INSTALL/config/hardware/audio.sh
 source $OMARCHY_INSTALL/config/dev.sh
 
 # Login

@@ -17,4 +17,4 @@ sudo sed -i 's/;extension=redis/extension=redis/' /etc/php/conf.d/redis.ini
 sudo sed -i 's/;extension=igbinary/extension=igbinary/' /etc/php/conf.d/igbinary.ini
 
 echo "Install LazySQL"
-yay -S --noconfirm --nodiffmenu --noeditmenu --answerdiff=None --answerclean=All lazysql
+yay -S --noconfirm --answerdiff=None --answerclean=All lazysql

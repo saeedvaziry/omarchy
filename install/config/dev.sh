@@ -1,15 +1,15 @@
 echo "Install MariaDB"
-sudo pacman -S mariadb
+sudo pacman -S mariadb --noconfirm
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 sudo systemctl enable --now mariadb
 
 echo "Setup Valkey"
-sudo pacman -S valkey
+sudo pacman -S valkey --noconfirm
 sudo systemctl enable --now valkey
 
 echo "Setup PHP"
 omarchy-install-dev-env php
-sudo pacman -S php-gd php-redis php-igbinary
+sudo pacman -S php-gd php-redis php-igbinary --noconfirm
 sudo sed -i 's/;extension=gd/extension=gd/' /etc/php/php.ini
 sudo sed -i 's/;extension=sqlite3/extension=sqlite3/' /etc/php/php.ini
 sudo sed -i 's/;extension=ftp/extension=ftp/' /etc/php/php.ini

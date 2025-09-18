@@ -51,6 +51,9 @@ source $OMARCHY_INSTALL/config/hardware/nvidia.sh
 source $OMARCHY_INSTALL/config/hardware/intel.sh
 source $OMARCHY_INSTALL/config/hardware/fix-f13-amd-audio-input.sh
 
+# Customize
+source $OMARCHY_INSTALL/config/dev.sh
+
 # Login
 source $OMARCHY_INSTALL/login/plymouth.sh
 source $OMARCHY_INSTALL/login/limine-snapper.sh

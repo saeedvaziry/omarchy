@@ -1,0 +1,70 @@
+#!/bin/bash
+
+STATE_DIR="$HOME/.local/state/omarchy"
+mkdir -p "$STATE_DIR"
+STATE_FILE="$STATE_DIR/coffee.mode"
+
+template="
+listener {
+    timeout = lock_timeout
+    on-timeout = loginctl lock-session
+}
+
+listener {
+    timeout = display_timeout
+    on-timeout = hyprctl dispatch dpms off
+    on-resume = hyprctl dispatch dpms on && brightnessctl -r
+}
+"
+
+restart_hypridle() {
+  pkill -x hypridle
+  setsid uwsm app -- hypridle >/dev/null 2>&1 &
+}
+
+set_mode() {
+  local mode="$1"
+  echo "$1" >"$STATE_FILE"
+  pkill -RTMIN+10 waybar
+}
+
+if [[ ! -f "$STATE_FILE" ]]; then
+  set_mode "disabled"
+fi
+
+MODE=$(<"$STATE_FILE")
+
+if [[ $MODE == "" ]]; then
+  set_mode "disabled"
+  MODE="disabled"
+fi
+
+if [[ "$1" == "status" ]]; then
+  if [[ "$MODE" == "enabled" ]]; then
+    echo "󰅶"
+    exit 0
+  else
+    echo "󰾪"
+    exit 0
+  fi
+fi
+
+if [[ "$MODE" == "enabled" ]]; then
+  template=${template/lock_timeout/300}
+  template=${template/display_timeout/360}
+  printf "%s\n" "$template" >~/.config/hypr/coffee.conf
+  restart_hypridle
+  set_mode "disabled"
+  notify-send "Coffee disabled!"
+  exit 0
+fi
+
+if [[ "$MODE" == "disabled" ]]; then
+  template=${template/lock_timeout/36000}
+  template=${template/display_timeout/36060}
+  printf "%s\n" "$template" >~/.config/hypr/coffee.conf
+  restart_hypridle
+  set_mode "enabled"
+  notify-send "Coffee enabled!"
+  exit 0
+fi

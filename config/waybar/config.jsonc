@@ -19,7 +19,7 @@
     "group/tray-expander",
     "bluetooth",
     "network",
-    // "custom/coffee",
+    "custom/coffee",
     "custom/screenrecord",
     "pulseaudio",
     // "cpu",
@@ -154,12 +154,12 @@
       ]
     }
   },
-  // "custom/coffee": {
-  //   "format": "  {}  ",
-  //   "exec": "~/.config/os/bin/os-coffee status",
-  //   "on-click": "~/.config/os/bin/os-coffee",
-  //   "signal": 10
-  // },
+  "custom/coffee": {
+    "format": "{}",
+    "exec": "~/.local/share/omarchy/bin/omarchy-cmd-coffee status",
+    "on-click": "~/.local/share/omarchy/bin/omarchy-cmd-coffee",
+    "signal": 10
+  },
   "custom/screenrecord": {
     "exec": "~/.local/share/omarchy/bin/omarchy-cmd-screenrecord-status",
     "on-click": "~/.local/share/omarchy/bin/omarchy-cmd-screenrecord",

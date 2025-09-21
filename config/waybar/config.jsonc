@@ -16,8 +16,8 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "group/tray-expander",
-    "bluetooth",
+    // "group/tray-expander",
+    // "bluetooth",
     "network",
     "custom/coffee",
     "custom/screenrecord",

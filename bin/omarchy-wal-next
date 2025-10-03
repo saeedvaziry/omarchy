@@ -47,7 +47,7 @@ else
   setsid uwsm app -- swaybg -i "$CURRENT_BACKGROUND_LINK" -m fill >/dev/null 2>&1 &
 
   # Generate colors
-  wal -i $CURRENT_BACKGROUND_LINK
+  wal -n -i $CURRENT_BACKGROUND_LINK
 
   # Restart components to apply new theme
   # omarchy-restart-waybar

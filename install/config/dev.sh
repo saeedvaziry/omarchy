@@ -1,7 +1,7 @@
-echo "Install MariaDB"
-sudo pacman -S mariadb --noconfirm
-sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-sudo systemctl enable --now mariadb
+# echo "Install MariaDB"
+# sudo pacman -S mariadb --noconfirm
+# sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+# sudo systemctl enable --now mariadb
 
 echo "Setup Valkey"
 sudo pacman -S valkey --noconfirm

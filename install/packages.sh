@@ -130,4 +130,5 @@ sudo pacman -S --noconfirm --needed \
   ddcutil \
   tmuxp \
   v2ray \
-  valkey
+  valkey \
+  qrcodegencpp-cmake

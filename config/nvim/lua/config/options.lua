@@ -12,3 +12,16 @@ vim.opt.showbreak = "↪ "
 vim.o.timeoutlen = 0
 
 vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+
+-- vim.lsp.enable("copilot")
+
+-- auto read
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  pattern = "*",
+  command = "if mode() != 'c' | silent! checktime | endif",
+})
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
+})

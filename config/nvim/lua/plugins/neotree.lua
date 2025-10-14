@@ -19,6 +19,10 @@ return {
         filtered_items = {
           hide_dotfiles = false, -- shows dotfiles
           hide_gitignored = false, -- shows gitignored files
+          hide_by_name = {
+            "node_modules",
+            "vendor",
+          },
         },
       },
       hijack_netrw_behavior = "open_current", -- opens files with the default handler instead of netrw

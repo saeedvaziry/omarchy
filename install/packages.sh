@@ -21,6 +21,19 @@ sudo pacman -S --noconfirm --needed \
   docker-buildx \
   docker-compose \
   dust \
+  elephant \
+  elephant-bluetooth \
+  elephant-calc \
+  elephant-clipboard \
+  elephant-desktopapplications \
+  elephant-files \
+  elephant-menus \
+  elephant-providerlist \
+  elephant-runner \
+  elephant-symbols \
+  elephant-todo \
+  elephant-unicode \
+  elephant-websearch \
   evince \
   eza \
   fastfetch \
@@ -108,7 +121,7 @@ sudo pacman -S --noconfirm --needed \
   ufw-docker \
   unzip \
   uwsm \
-  walker-bin \
+  walker \
   waybar \
   wf-recorder \
   whois \

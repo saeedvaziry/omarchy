@@ -29,3 +29,4 @@ run_logged $OMARCHY_INSTALL/config/ssh-flakiness.sh
 run_logged $OMARCHY_INSTALL/config/theme.sh
 run_logged $OMARCHY_INSTALL/config/timezones.sh
 run_logged $OMARCHY_INSTALL/config/xcompose.sh
+run_logged $OMARCHY_INSTALL/config/flatpak.sh

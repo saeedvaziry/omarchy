@@ -87,7 +87,6 @@ sudo pacman -S --noconfirm --needed \
   noto-fonts-extra \
   nss-mdns \
   nvim \
-  obs-studio \
   obsidian \
   omarchy-chromium \
   pamixer \
@@ -144,4 +143,5 @@ sudo pacman -S --noconfirm --needed \
   tmuxp \
   v2ray \
   valkey \
-  qrcodegencpp-cmake
+  qrcodegencpp-cmake \
+  flatpak
